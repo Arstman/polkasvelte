@@ -2,11 +2,11 @@
 	export function load(){
 		return {
 			stuff: {
-				title: "index title",
-				keywords: "index site keywords, a ",
-				description: "index site description",
-				ogImage: "index og image",
-				url: "index site url"
+				title: "about title",
+				keywords: "about site keywords, a ",
+				description: "about site description",
+				ogImage: "about og image",
+				url: "about site url"
 			}
 		}
 	}
