@@ -12,7 +12,7 @@
 	}
 </script>
 <script>
-	import Nav from '$lib/header/mega.svelte';
+	import Nav from '$lib/header/dzmenu.svelte';
 	import Footer from '$lib/footer/fourcols.svelte';
 	import { page } from '$app/stores';
 	let siteName = ' site siteName';

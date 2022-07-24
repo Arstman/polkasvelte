@@ -1,4 +1,4 @@
-<nav class="bg-white border-b-2 border-gray-300 relative text-gray-900 z-20" data-pg-collapsed>
+<nav class="bg-white border-b-2 border-gray-300  text-gray-900 z-20 bg-opacity-95 inset-x-0 sticky top-0 w-full z-5">
 	<div class="container mx-auto flex justify-between">
 		<div class="relative block p-4 lg:p-6 text-xl text-blue-600 font-bold">Logo</div>
 		<ul class="flex">
@@ -14,7 +14,7 @@
 					for="toggle-one"
 					class="block cursor-pointer py-6 px-4 lg:p-6 text-sm lg:text-base font-bold">Click</label
 				>
-				<div role="toggle" class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
+				<div class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
 					<div class="container mx-auto w-full flex flex-wrap justify-between mx-2">
 						<ul
 							class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3"
@@ -109,7 +109,7 @@
 						<ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
 							<h3 class="font-bold text-xl text-white text-bold mb-2">Heading 4</h3>
 							<li class="pt-3">
-								<img src="https://www.dz1997.com/products/zhuang-ji-shi-gao-wen-gao-ya-jie-zhi-fa/zhuang-ji-shi-gao-wen-gao-ya-jie-zhi-fa-da-zhong-fa-men-ji-tuan.png" />
+								<img src="https://www.dz1997.com/products/zhuang-ji-shi-gao-wen-gao-ya-jie-zhi-fa/zhuang-ji-shi-gao-wen-gao-ya-jie-zhi-fa-da-zhong-fa-men-ji-tuan.png" alt="the image in menu" />
 							</li>
 						</ul>
 					</div>
