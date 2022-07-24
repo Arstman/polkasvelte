@@ -1,5 +1,5 @@
 <script context="module">
-	export function load(){
+	export async function load(){
 		return {
 			stuff: {
 				title: "index title",

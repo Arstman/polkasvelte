@@ -4,7 +4,7 @@
 		<ul class="flex">
 			<!--Regular Link-->
 			<li class="hover:bg-blue-800 hover:text-white">
-				<a href="/" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">Normal</a
+				<a href="/about" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">Normal</a
 				>
 			</li>
 			<!--Toggleable Link-->
