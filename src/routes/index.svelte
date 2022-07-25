@@ -5,7 +5,7 @@
 				title: "index title",
 				keywords: "index site keywords, a ",
 				description: "index site description",
-				ogImage: "index og image",
+				og_image: "index og image",
 				url: "index site url"
 			}
 		}

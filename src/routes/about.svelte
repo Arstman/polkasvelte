@@ -5,7 +5,7 @@
 				title: "about title",
 				keywords: "about site keywords, a ",
 				description: "about site description",
-				ogImage: "about og image",
+				og_image: "about og image",
 				url: "about site url"
 			}
 		}

@@ -27,6 +27,7 @@
 
     .hoverable:hover .mega-menu {
         @apply block;
+        @apply z-30;
     }
 
     /* #toggle Class Styles

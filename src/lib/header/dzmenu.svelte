@@ -1,5 +1,5 @@
 <script>
-	let data = {
+	let nav_data = {
 		l: [
 			{
 				name: 'NabMenuToggler',
@@ -111,7 +111,7 @@
 					<button
 						class="border bg-red-800 hover:text-gray-100  ml-auto px-3 py-2 rounded text-white lg:hidden"
 						data-name="nav-toggler"
-						data-pg-ia={JSON.stringify(data)}
+						data-pg-ia={JSON.stringify(nav_data)}
 						data-pg-ia-apply="$nav [data-name=nav-toggler]"
 					>
 						<span class="block border-b-2 border-current my-1 w-6" />
@@ -160,6 +160,7 @@
 							data-pgc-edit="dz-nav-link[no_content]"
 							data-pgc-edit-classes="font-bold">联系</a
 						>
+
 					</div>
 					<div class="flex-wrap gap-2 inline-flex items-center py-1">
 						<a
