@@ -12,8 +12,8 @@
 	}
 </script>
 <script>
-	import Nav from '$lib/header/fmega.svelte';
-	import Footer from '$lib/footer/fourcols.svelte';
+	import Nav from '$lib/components/header/fmega.svelte';
+	import Footer from '$lib/components/footer/fourcols.svelte';
 	import { page } from '$app/stores';
 	let siteName = ' site siteName';
 </script>
