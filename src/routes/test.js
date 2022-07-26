@@ -1,12 +1,12 @@
-//import {getDirectusClient } from '$lib/db/client';
-import { Directus } from "@directus/sdk";
-
-import 'dotenv/config';
+//import { Directus } from "@directus/sdk";
+import {getDirectusClient } from '$lib/db/client';
+//import 'dotenv/config';
 
 export async function GET() {
 
-    const directus = new Directus('https://d.facan.vip:8000')
-    await directus.auth.static(process.env.STATIC_TOKEN);
+    //const directus = new Directus(process.env.VITE_DIRECTUS_URL);
+    const directus = await getDirectusClient();
+   // await directus.auth.static(process.env.STATIC_TOKEN);
 
     let response;
     try {
