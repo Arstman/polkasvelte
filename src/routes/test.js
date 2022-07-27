@@ -4,15 +4,17 @@ import {
 //import 'dotenv/config';
 
 export async function GET() {
-
     const client = await getClient();
-
     let response;
     try {
         response = await client.items('navigator').readByQuery({
-            fields: ['title', 'is_root', 'id'],
-            sort: 'date_created'
-        });
+            fields: ['id', 'children.slug','children.title', 'children.page_linked.description', 'children.page_linked.og_image'],
+            filter: {
+                is_root: {
+                    _eq: true
+                }
+            },
+        })
     } catch (error) {
         return {
             status: 404
@@ -25,7 +27,7 @@ export async function GET() {
             'access-control-allow-origin': '*',
         },
         body: {
-            life: response.data
+            life: response
         }
     };
 }
