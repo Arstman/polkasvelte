@@ -29,7 +29,6 @@ export async function GET() {
         }
     }
     let data = await response.data[0].children;
-    console.log(JSON.stringify(data));
     return {
         status: 200,
         headers: {

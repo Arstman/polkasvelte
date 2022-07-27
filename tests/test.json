@@ -1,50 +1,15 @@
 {
-    "data": [{
-        "id": 2,
+    "title": "首页 - 大众阀门集团",
+    "children": [{
+        "slug": "products",
+        "title": "产品",
         "children": [{
             "title": "通用阀门系列",
-            "parent": 2,
-            "slug": "tong-yong-fa-men-xi-lie",
-            "page_linked": {
-                "description": "大众阀门集团通用阀门系列",
-                "og_image": "ceaacd1c-29c5-46f9-8371-68aa9dac0c52"
-            }
+            "slug": "tong-yong-fa-men-xi-lie"
         }]
     }, {
-        "id": 3,
-        "children": [{
-            "title": "法兰连接钢制造闸阀",
-            "parent": 3,
-            "slug": "fa-lan-lian-jie-gang-zhi-zha-fa",
-            "page_linked": {
-                "description": "大众阀门集团法兰连接钢制闸阀",
-                "og_image": "224dbe37-da42-459b-80db-89f4ffbfcbfa"
-            }
-        }]
-    }, {
-        "id": 4,
-        "children": []
-    }, {
-        "id": 1,
-        "children": [{
-            "title": "产品",
-            "parent": 1,
-            "slug": "products",
-            "page_linked": {
-                "description": "产品体系",
-                "og_image": "745cdb31-24bf-44d9-a231-7eb98428bdf8"
-            }
-        }, {
-            "title": "关于",
-            "parent": 1,
-            "slug": "about",
-            "page_linked": {
-                "description": "关于大众阀门集团",
-                "og_image": "7354b24e-1f80-4539-9285-721c06f0ca2b"
-            }
-        }]
-    }, {
-        "id": 5,
+        "slug": "about",
+        "title": "关于",
         "children": []
     }]
 }

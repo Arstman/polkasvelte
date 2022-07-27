@@ -84,60 +84,66 @@
 		</button>
 		<div data-name="nav-menu" class="flex-grow hidden lg:flex lg:items-center lg:w-auto w-full">
 			<div class="flex flex-col lg:flex-row">
-            {#each menu as nav }
-                {#if nav.children.length == 0 }
-				<a href="/{nav.slug}" class="hover:text-gray-700 px-0 py-2 text-gray-900 lg:px-4 lg:py-6">{nav.title}</a>
-                {:else}
-             <div class="relative">
-					<a
-						href="/{nav.slug}"
-						class="block hover:text-gray-700 px-0 py-2 text-gray-900 lg:px-4 lg:py-6"
-						role="button"
-						data-name="nav-dropdown-trigger"
-						data-pg-ia={JSON.stringify({
-							l: [
-								{
-									trg: 'click',
-									a: {
-										l: [{ t: '^div|div', l: [{ t: 'set', p: 0, d: 0, l: { display: 'block' } }] }]
-									},
-									pdef: 'true',
-									trev: 'true',
-									name: 'NavDropdownTrigger'
-								}
-							]
-						})}
-					>
-						<span>{nav.title}</span>
-						<svg
-							class="h-4 inline-block ml-1 w-4"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 20 20"
-							aria-hidden="true"
-							fill="currentColor"
+				{#each menu as nav}
+					{#if nav.children.length == 0}
+						<a
+							href="/{nav.slug}"
+							class="hover:text-gray-700 px-0 py-2 text-gray-900 lg:px-4 lg:py-6">{nav.title}</a
 						>
-							<path
-								fill-rule="evenodd"
-								d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-								clip-rule="evenodd"
-							/>
-						</svg></a
-					>
-					<div
-						class="bg-white border hidden left-0 min-w-max py-2 rounded-bl rounded-br shadow top-full z-20 lg:absolute"
-					>
-					{#each nav.children as child }
-                     <a href="{child.slug}" class="block hover:bg-gray-100 hover:text-gray-700 px-4 py-1 text-gray-900"
-							>{child.title}</a
-						>						    
-                    {/each}	
-                   <!-- <hr class="my-2" /> -->
-											</div>
-				</div>   
-                {/if}
-                
-            {/each}
+					{:else}
+						<div class="relative">
+							<a
+								href="/{nav.slug}"
+								class="block hover:text-gray-700 px-0 py-2 text-gray-900 lg:px-4 lg:py-6"
+								role="button"
+								data-name="nav-dropdown-trigger"
+								data-pg-ia={JSON.stringify({
+									l: [
+										{
+											trg: 'click',
+											a: {
+												l: [
+													{ t: '^div|div', l: [{ t: 'set', p: 0, d: 0, l: { display: 'block' } }] }
+												]
+											},
+											pdef: 'true',
+											trev: 'true',
+											name: 'NavDropdownTrigger'
+										}
+									]
+								})}
+							>
+								<span>{nav.title}</span>
+								<svg
+									class="h-4 inline-block ml-1 w-4"
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 20 20"
+									aria-hidden="true"
+									fill="currentColor"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+										clip-rule="evenodd"
+									/>
+								</svg></a
+							>
+							<div
+								class="bg-white border hidden left-0 min-w-max py-2 rounded-bl rounded-br shadow top-full z-20 lg:absolute"
+							>
+								{#each nav.children as child}
+									<a
+										href={child.slug}
+										class="block hover:bg-gray-100 hover:text-gray-700 px-4 py-1 text-gray-900"
+										>{child.title}</a
+									>
+								{/each}
+								<!-- <hr class="my-2" /> -->
+							</div>
 						</div>
+					{/if}
+				{/each}
+			</div>
 			<div class="flex flex-col ml-auto lg:flex-row">
 				<a href="/" class="hover:text-gray-700 px-0 py-2 text-gray-900 lg:px-4 lg:py-6"
 					><svg
@@ -160,6 +166,3 @@
 		</div>
 	</nav>
 </header>
-<p class="p-12">
-	{JSON.stringify(menu)}
-</p>
