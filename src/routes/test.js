@@ -2,7 +2,7 @@ import {
     getClient
 } from '$lib/db/client';
 //import 'dotenv/config';
-import { transImage } from '$lib/db/image-trans';
+import { transImage } from '/private/image-trans';
 
 export async function GET() {
     const slug = "products";
