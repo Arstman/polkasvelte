@@ -21,7 +21,6 @@
 	import { page } from '$app/stores';
 	let siteName = ' site siteName';
 	export let menu;
-	console.log(menu);
 </script>
 
 <svelte:head>
