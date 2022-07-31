@@ -1,20 +1,8 @@
-<script context="module">
-	export async function load(){
-		return {
-			stuff: {
-				title: "index title",
-				keywords: "index site keywords, a ",
-				description: "index site description",
-				og_image: "index og image",
-				url: "index site url"
-			}
-		}
-	}
-</script>
 
 <script>
+	import Meta from '$lib/components/share/meta.svelte';
 </script>
-
+<Meta />
 <section
 	class="bg-gray-50 pb-24 pt-20 relative md:pb-48"
 	data-pgc="dz-product-list-des"

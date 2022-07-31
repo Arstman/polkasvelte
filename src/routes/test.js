@@ -2,7 +2,7 @@ import {
     getClient
 } from '$lib/db/client';
 //import 'dotenv/config';
-import { transImage } from '/private/image-trans';
+import {transImage} from '/private/image-trans';
 
 export async function GET() {
     const slug = "products";
@@ -48,7 +48,8 @@ export async function GET() {
             'access-control-allow-origin': '*',
         },
         body: {
-            life: data
+            meta: {...data, url: slug},
+            life: {something: "something"}
         }
     };
 }
