@@ -1,62 +1,41 @@
-import {
-    getClient
-} from '$lib/db/client';
+
 //import 'dotenv/config';
 import {transImage} from '/private/image-trans';
 import { ApiPromise, WsProvider } from '@polkadot/api'
 
+import { get_from_client} from "$lib/db/get-data.js";
+
 const wsProvider = new WsProvider('wss://rpc.polkadot.io');
 const polka_api = await ApiPromise.create({provider: wsProvider});
-const client = await getClient();
 
 export async function GET() {
     const slug = "products";
     let response;
-    try {
-        response = await client.items('navigator').readByQuery({
-            fields: ['title', 'page_linked.keywords', 'page_linked.description', 'page_linked.og_image.filename_disk', 'page_linked.og_image.filename_download'],
-            filter: {
-                _and: [{
-                    slug: {
-                        _eq: slug
+    let fields = ['title', 'page_linked.keywords', 'page_linked.description', 'page_linked.og_image.filename_disk', 'page_linked.og_image.filename_download'];
+    let collection = 'navigator'
+    let filter = {
+            _and: [{
+                slug: {
+                    _eq: slug
+                }
+            }, {
+                project: {
+                    name: {
+                        _eq: process.env.PROJECT_NAME
                     }
-                }, {
-                    project: {
-                        name: {
-                            _eq: process.env.PROJECT_NAME
-                        }
-                    }
-                }]
-            },
-        })
-    } catch (error) {
-        return {
-            status: 404
-        }
-    }
-    let src = response.data[0].page_linked.og_image.filename_disk;
-    let dest = response.data[0].page_linked.og_image.filename_download;
-    await transImage(src, dest);
-    let data = await response.data.map((item) => {
-        return {
-            title: item.title,
-            keywords: item.page_linked.keywords,
-            description: item.page_linked.description,
-            og_image: item.page_linked.og_image.filename_download,
-        }
-    })[0];
-    console.log(JSON.stringify(data, null, '\t'));
-// The amount required to create a new account
-    console.log(polka_api.consts.balances.existentialDeposit.toNumber());
+                }
+            }]
+        };
+    response = await get_from_client(collection,fields,filter)
 
-    return {
-        status: 200,
-        headers: {
-            'access-control-allow-origin': '*',
-        },
-        body: {
-            meta: {...data, url: slug},
-            life: {genesisHash: polka_api.genesisHash.toHuman()}
-        }
-    };
+    console.log(JSON.stringify(response[0], null, '\t'));
+    console.log(polka_api.consts.balances.existentialDeposit.toNumber());
+    // Retrieve the chain name
+    // const chain = await polka_api.rpc.system.chain();
+    // await polka_api.rpc.chain.subscribeNewHeads((lastHeader) => {
+    //     console.log(`${chain}: last block #${lastHeader.number} has hash ${lastHeader.hash}`);
+    // });
+
+    return  response
+
 }
