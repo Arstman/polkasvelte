@@ -3,10 +3,14 @@ import {
 } from '$lib/db/client';
 //import 'dotenv/config';
 import {transImage} from '/private/image-trans';
+import { ApiPromise, WsProvider } from '@polkadot/api'
+
+const wsProvider = new WsProvider('wss://rpc.polkadot.io');
+const polka_api = await ApiPromise.create({provider: wsProvider});
+const client = await getClient();
 
 export async function GET() {
     const slug = "products";
-    const client = await getClient();
     let response;
     try {
         response = await client.items('navigator').readByQuery({
@@ -42,6 +46,9 @@ export async function GET() {
         }
     })[0];
     console.log(JSON.stringify(data, null, '\t'));
+// The amount required to create a new account
+    console.log(polka_api.consts.balances.existentialDeposit.toNumber());
+
     return {
         status: 200,
         headers: {
@@ -49,7 +56,7 @@ export async function GET() {
         },
         body: {
             meta: {...data, url: slug},
-            life: {something: "something"}
+            life: {genesisHash: polka_api.genesisHash.toHuman()}
         }
     };
 }
