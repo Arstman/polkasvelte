@@ -1,16 +1,10 @@
-<script context="module">
-
-
-</script>
-
 <script>
 	//import Meta from '$lib/components/share/meta.svelte';
-	import { ApiPromise, WsProvider } from '@polkadot/api'
+	import {get_polkadot_api} from "$lib/wsclient/polkadot-client.js";
 	let str = "waiting..."
 	export async function get_desposit() {
-		const wsProvider = new WsProvider('wss://rpc.polkadot.io');
-		const polka_api = await ApiPromise.create({provider: wsProvider});
 
+		const polka_api = await get_polkadot_api();
 		console.log(polka_api.consts.balances.existentialDeposit.toNumber());
 		const chain = await polka_api.rpc.system.chain();
 		await polka_api.rpc.chain.subscribeNewHeads((lastHeader) => {
