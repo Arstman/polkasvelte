@@ -3,7 +3,6 @@
 	import {get_polkadot_api} from "$lib/wsclient/polkadot-client.js";
 	let str = "waiting..."
 	export async function get_desposit() {
-
 		const polka_api = await get_polkadot_api();
 		console.log(polka_api.consts.balances.existentialDeposit.toNumber());
 		const chain = await polka_api.rpc.system.chain();
